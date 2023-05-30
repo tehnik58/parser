@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">\<head>
+<head>
+    <meta charset="UTF-8">
+    <title>Search books</title>
+    <h1>Читай город</h1>
+  <ul th:each="book:${cbooks}">
+    <li>
+        <p th:text="${book.name}+' '+${book.author}+ ' '+${book.price} "></p>
+        <a th:href="@{'/favourites/add?'+'name='+${book.name}+'&author='+${book.author}+'&price='+${book.price}}">add to favourites</a>
+    </li>
+  </ul>
+    <h1>Лабиринт</h1>
+    <ul th:each="lbook:${lbooks}">
+        <li>
+            <p th:text="${lbook.name}+' '+${lbook.author}+ ' '+${lbook.price} "></p>
+            <a th:href="@{'/favourites/add?'+'name='+${lbook.name}+'&author='+${lbook.author}+'&price='+${lbook.price}}">add to favourites</a>
+        </li>
+    </ul>
+</head>
+<body>
+
+</body>
+</html>
